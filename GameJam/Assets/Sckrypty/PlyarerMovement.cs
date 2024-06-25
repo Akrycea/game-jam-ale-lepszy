@@ -45,12 +45,15 @@ public class PlyarerMovement : MonoBehaviour
         }
     public void isWalking()
     {
-        if (speed < 0f)
+        if (speedX != 0f || speedY != 0f)
         {
             walking = true;
         }
-        else
-            walking = true;
+        if (speedX == 0f && speedY == 0f)
+        {
+            walking = false;
+        }
+            
     }
    
 }
