@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MemoryGot5 : MonoBehaviour
 {
     public Collider2D playerCollider;
     public Collider2D memoryCollider;
     public bool gotem;
-    photoMenu menu;
+  
 
 
 
@@ -17,7 +18,7 @@ public class MemoryGot5 : MonoBehaviour
         memoryCollider = GetComponent<Collider2D>();
         gameObject.SetActive(true);
         gotem = false;
-        menu = GameObject.Find("PhotoMenu5").GetComponent<photoMenu>();
+    
 
 
     }
@@ -36,7 +37,7 @@ public class MemoryGot5 : MonoBehaviour
         if (playerCollider.IsTouching(memoryCollider))
         {
             gotem = true;
-            menu.pullUp();
+            SceneManager.LoadScene(3);
             gameObject.SetActive(false);
             
 
